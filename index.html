@@ -1,0 +1,28 @@
+<html>
+<script>
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number}
+ */
+function sortNumber(a, b) {
+  return a - b;
+}
+var findMedianSortedArrays = function(nums1, nums2) {
+	var c = nums1.concat(nums2);
+	c.sort(sortNumber);
+	console.log(c);
+	if(c.length % 2) {
+		return c[c.length/2 | 0];
+	} else {
+		return (c[c.length/2-1] + c[c.length/2])/2;
+	}
+};
+
+var nums1 = [3];
+var nums2 = [-2, -1];
+
+console.log("The median is " + findMedianSortedArrays(nums1, nums2));
+
+</script>
+</html>
